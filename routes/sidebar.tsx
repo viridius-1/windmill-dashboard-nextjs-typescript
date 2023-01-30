@@ -4,7 +4,7 @@
  *
  */
 
-interface IRoute{
+interface IRoute {
   path?: string
   icon?: string
   name: string
@@ -13,7 +13,7 @@ interface IRoute{
   exact?: boolean
 }
 
-export function routeIsActive (pathname: String, route: IRoute): boolean {
+export function routeIsActive(pathname: String, route: IRoute): boolean {
   if (route.checkActive) {
     return route.checkActive(pathname, route)
   }
@@ -24,6 +24,11 @@ export function routeIsActive (pathname: String, route: IRoute): boolean {
 }
 
 const routes: IRoute[] = [
+  {
+    path: '/example/forms',
+    icon: 'EditIcon',
+    name: 'To-do lists',
+  },
   {
     path: '/example', // the url
     icon: 'HomeIcon', // the component being exported from icons/index.js
@@ -89,5 +94,5 @@ const routes: IRoute[] = [
   },
 ]
 
-export type {IRoute}
+export type { IRoute }
 export default routes
